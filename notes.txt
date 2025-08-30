@@ -1,0 +1,2 @@
+transition timing function: linear
+\[var\(--color-[A-z-]+\)\]

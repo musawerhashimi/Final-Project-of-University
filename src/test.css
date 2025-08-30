@@ -1,0 +1,119 @@
+p {
+  --color-background-user-profile: hsl(240, 10%, 99%); /* hsl(240, 10%, 99%) */
+  --color-foreground-user-profile: hsl(
+    240,
+    10%,
+    3.9%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-card-user-profile: hsl(0, 0%, 100%); /* hsl(0, 0%, 100%) */
+  --color-card-foreground-user-profile: hsl(
+    240,
+    10%,
+    3.9%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-popover-user-profile: hsl(0, 0%, 100%); /* hsl(0, 0%, 100%) */
+  --color-popover-foreground-user-profile: hsl(
+    240,
+    10%,
+    3.9%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-primary-user-profile: hsl(262, 84%, 58%); /* hsl(262, 84%, 58%) */
+  --color-primary-foreground-user-profile: hsl(
+    0,
+    0%,
+    100%
+  ); /* hsl(0, 0%, 100%) */
+  --color-secondary-user-profile: hsl(
+    240,
+    4.8%,
+    95.9%
+  ); /* hsl(240, 4.8%, 95.9%) */
+  --color-secondary-foreground-user-profile: hsl(
+    240,
+    5.9%,
+    10%
+  ); /* hsl(240, 5.9%, 10%) */
+  --color-muted-user-profile: hsl(240, 4.8%, 95.9%); /* hsl(240, 4.8%, 95.9%) */
+  --color-muted-foreground-user-profile: hsl(
+    240,
+    3.8%,
+    46.1%
+  ); /* hsl(240, 3.8%, 46.1%) */
+  --color-accent-user-profile: hsl(
+    240,
+    4.8%,
+    95.9%
+  ); /* hsl(240, 4.8%, 95.9%) */
+  --color-accent-foreground-user-profile: hsl(
+    240,
+    5.9%,
+    10%
+  ); /* hsl(240, 5.9%, 10%) */
+  --color-border-user-profile: hsl(240, 5.9%, 90%); /* hsl(240, 5.9%, 90%) */
+  --color-input-user-profile: hsl(240, 5.9%, 90%); /* hsl(240, 5.9%, 90%) */
+  --color-ring-user-profile: hsl(262, 84%, 58%); /* hsl(262, 84%, 58%) */
+  --color-radius-user-profile: 0.75rem;
+}
+
+p {
+  --color-background-user-profile: hsl(240 10% 3.9%); /* hsl(240, 10%, 99%) */
+  --color-foreground-user-profile: hsl(0 0% 98%); /* hsl(240, 10%, 3.9%) */
+  --color-card-user-profile: hsl(240 10% 10%); /* hsl(0, 0%, 100%) */
+  --color-card-foreground-user-profile: hsl(0 0% 98%); /* hsl(240, 10%, 3.9%) */
+  --color-popover-user-profile: hsl(240 10% 3.9%); /* hsl(0, 0%, 100%) */
+  --color-popover-foreground-user-profile: hsl(0 0% 98%); /* hsl(240, 10%, 3.9%) */
+  --color-primary-user-profile: hsl(262 84% 58%); /* hsl(262, 84%, 58%) */
+  --color-primary-foreground-user-profile: hsl(0 0% 100%); /* hsl(0, 0%, 100%) */
+  --color-secondary-user-profile: hsl(240 3.7% 15.9%); /* hsl(240, 4.8%, 95.9%) */
+  --color-secondary-foreground-user-profile: hsl(0 0% 98%); /* hsl(240, 5.9%, 10%) */
+  --color-muted-user-profile: hsl(240 3.7% 15.9%); /* hsl(240, 4.8%, 95.9%) */
+  --color-muted-foreground-user-profile: hsl( 240 5% 64.9%); /* hsl(240, 3.8%, 46.1%) */
+  --color-accent-user-profile: hsl(240 3.7% 15.9%); /* hsl(240, 4.8%, 95.9%) */
+  --color-accent-foreground-user-profile: hsl(0 0% 98%); /* hsl(240, 5.9%, 10%) */
+  --color-border-user-profile: hsl(240 3.7% 15.9%); /* hsl(240, 5.9%, 90%) */
+  --color-input-user-profile: hsl(240 3.7% 15.9%); /* hsl(240, 5.9%, 90%) */
+  --color-ring-user-profile: hsl(262 84% 58%); /* hsl(262, 84%, 58%) */
+  --color-radius-user-profile: 0.75rem;
+}
+
+p {
+  --background-user-profile: 240 10% 99%; /* hsl(240, 10%, 99%) */
+  --foreground-user-profile: 240 10% 3.9%;
+  --card-user-profile: 0 0% 100%;
+  --card-foreground-user-profile: 240 10% 3.9%;
+  --popover-user-profile: 0 0% 100%;
+  --popover-foreground-user-profile: 240 10% 3.9%;
+  --primary-user-profile: 262 84% 58%;
+  --primary-foreground-user-profile: 0 0% 100%;
+  --secondary-user-profile: 240 4.8% 95.9%;
+  --secondary-foreground-user-profile: 240 5.9% 10%;
+  --muted-user-profile: 240 4.8% 95.9%;
+  --muted-foreground-user-profile: 240 3.8% 46.1%;
+  --accent-user-profile: 240 4.8% 95.9%;
+  --accent-foreground-user-profile: 240 5.9% 10%;
+  --border-user-profile: 240 5.9% 90%;
+  --input-user-profile: 240 5.9% 90%;
+  --ring-user-profile: 262 84% 58%;
+  --radius-user-profile: 0.75rem;
+}
+
+p {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 10%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 262 84% 58%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 262 84% 58%;
+  --radius: 0.75rem;
+}

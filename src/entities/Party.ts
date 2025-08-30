@@ -1,0 +1,1 @@
+export type Party = "employees" | "members" | "customers" | "vendors";

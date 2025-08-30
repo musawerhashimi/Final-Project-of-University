@@ -1,0 +1,444 @@
+@import "tailwindcss";
+
+.subtotal:hover .subtotalCurrency {
+  display: block;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+
+  --color-base: var(--color-gray-100);
+  --color-base-front: var(--color-gray-700);
+
+  --color-primary: var(--color-gray-300);
+  --color-primary-front: #111827; /* Main readable text */
+
+  --color-secondary: var(--color-gray-800);
+  --color-secondary-front: #363d47; /* Subheadings or less prominent text */
+
+  --color-hover-effect: #a6c4eb; /* Hover Effect */
+  --color-hover: #daeaee; /* Light hover for buttons/items */
+
+  --color-mask: white;
+  --color-mask-front: black;
+
+  --color-indigo: #b4c0ff;
+
+  --color-success: var(--color-green-500);
+  --color-success-hover: var(--color-green-600);
+
+  --color-error: #f13841;
+  --color-error-hover: #a00a12;
+
+  --color-warning: #ffc14d;
+  --color-warning-hover: rgb(255, 241, 38);
+
+  --color-teal: #26acac;
+  --color-teal-hover: #067e7e;
+
+  --color-receipt: var(--color-white);
+  --color-receipt-front: var(--color-black-800);
+
+  --color-border-color: color-mix(
+    in oklab,
+    var(--color-base-front) 40%,
+    transparent
+  );
+  --color-userprofile: #bed3c8;
+  --color-add-purchase-bg: #7fdf7f1a;
+  --color-add-purchase-form: #6fbbff0f;
+  --color-border-add-purchase: #2a2a9952;
+
+  /* Settings Colors */
+  --color-background-settings: var(--color-slate-50); /* slate-50 */
+  --color-foreground-settings: var(--color-slate-900); /* slate-900 */
+  --color-card-settings: white; /* white */
+  --color-card-foreground-settings: var(--color-slate-800); /* slate-800 */
+  --color-border-settings: var(--color-slate-200); /* slate-200 */
+  --color-input-settings: var(--color-slate-100); /* slate-100 */
+  --color-primary-settings: var(--color-indigo-700); /* indigo-700 */
+  --color-primary-foreground-settings: white; /* white */
+  --color-muted-foreground-settings: var(--color-slate-500); /* slate-500 */
+
+  --color-background-user-profile: hsl(240, 10%, 99%); /* hsl(240, 10%, 99%) */
+  --color-foreground-user-profile: hsl(
+    240,
+    10%,
+    3.9%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-card-user-profile: hsl(0, 0%, 100%); /* hsl(0, 0%, 100%) */
+  --color-card-foreground-user-profile: hsl(
+    240,
+    10%,
+    3.9%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-popover-user-profile: hsl(0, 0%, 100%); /* hsl(0, 0%, 100%) */
+  --color-popover-foreground-user-profile: hsl(
+    240,
+    10%,
+    3.9%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-primary-user-profile: hsl(262, 84%, 58%); /* hsl(262, 84%, 58%) */
+  --color-primary-foreground-user-profile: hsl(
+    0,
+    0%,
+    100%
+  ); /* hsl(0, 0%, 100%) */
+  --color-secondary-user-profile: hsl(
+    240,
+    4.8%,
+    95.9%
+  ); /* hsl(240, 4.8%, 95.9%) */
+  --color-secondary-foreground-user-profile: hsl(
+    240,
+    5.9%,
+    10%
+  ); /* hsl(240, 5.9%, 10%) */
+  --color-muted-user-profile: hsl(240, 4.8%, 95.9%); /* hsl(240, 4.8%, 95.9%) */
+  --color-muted-foreground-user-profile: hsl(
+    240,
+    3.8%,
+    46.1%
+  ); /* hsl(240, 3.8%, 46.1%) */
+  --color-accent-user-profile: hsl(
+    240,
+    4.8%,
+    95.9%
+  ); /* hsl(240, 4.8%, 95.9%) */
+  --color-accent-foreground-user-profile: hsl(
+    240,
+    5.9%,
+    10%
+  ); /* hsl(240, 5.9%, 10%) */
+  --color-border-user-profile: hsl(240, 5.9%, 90%); /* hsl(240, 5.9%, 90%) */
+  --color-input-user-profile: hsl(240, 5.9%, 90%); /* hsl(240, 5.9%, 90%) */
+  --color-ring-user-profile: hsl(262, 84%, 58%); /* hsl(262, 84%, 58%) */
+
+  --color-background-primary-users: #f8fafc;
+  --color-background-secondary-users: #ffffff;
+  --color-background-accent-users: #f1f5f9;
+  --color-text-primary-users: #0f172a;
+  --color-text-secondary-users: #64748b;
+  --color-border-primary-users: #e2e8f0;
+  --color-accent-primary-users: #4f46e5;
+  --color-accent-hover-users: #4338ca;
+
+  /* Backgrounds */
+  --color-surface: #ffffff; /* Cards, panels */
+  --color-muted: #f9fafb; /* Muted or masked areas */
+  --color-elevated: #f3f4f6; /* Tooltips, dropdowns */
+  --color-sidebar: #f1f5f9; /* Left/right panels */
+  --color-header: #ffffff; /* Top navs */
+  --color-footer: #f9fafb;
+
+  /* Hovers */
+  --color-pressed: #e5e7eb; /* Active press effect */
+
+  /* Selected/Active */
+  --color-active: #e0f2fe; /* For selected items or tabs */
+
+  --color-muted-front: #6b7280; /* Hints, timestamps, etc. */
+  --color-inverted-front: #ffffff; /* Text on dark backgrounds */
+  --color-accent-front: #2563eb; /* Links, calls to action */
+  --color-error-front: #dc2626; /* Error messages */
+  --color-success-front: #16a34a; /* Success or positive state */
+  --color-warning-front: #f59e0b; /* Warnings or alerts */
+  --color-disabled-front: #9ca3af; /* Disabled buttons or inputs */
+
+  --color-primary-mock: #3b82f6;
+  --color-primary-hover-mock: #2563eb;
+  --color-secondary-mock: #64748b;
+  --color-background-mock: #ffffff;
+  --color-surface-mock: #f8fafc;
+  --color-surface-hover-mock: #f1f5f9;
+  --color-text-primary-mock: #1e293b;
+  --color-text-secondary-mock: #64748b;
+  --color-text-muted-mock: #94a3b8;
+  --color-success-mock: #10b981;
+  --color-warning-mock: #f59e0b;
+  --color-error-mock: #ef4444;
+  --color-shadow-mock: rgba(0, 0, 0, 0.1);
+
+  --color-base-barcode: #fafafa;
+  --color-text-barcode: #111827;
+  --color-batch-bg: #ffffff;
+}
+
+:root {
+  background: linear-gradient(from top left);
+  --color-base: var(--color-slate-50);
+  --color-base-front: var(--color-gray-700);
+  --color-userprofile: #bed3c8;
+  --color-primary: #fdfdfd;
+  --color-primary-front: #111827; /* Main readable text */
+
+  --color-secondary: var(--color-gray-800);
+  --color-secondary-front: #363d47; /* Subheadings or less prominent text */
+
+  --color-hover-effect: var(--color-sky-100); /* Hover Effect */
+  --color-hover: var(--color-sky-100); /* Light hover for buttons/items */
+
+  --color-mask: white;
+  --color-mask-front: black;
+
+  --color-indigo: #b4c0ff;
+
+  --color-success: var(--color-green-500);
+  --color-success-hover: var(--color-green-600);
+
+  --color-error: #f13841;
+  --color-error-hover: #a00a12;
+
+  --color-warning: #ffc14d;
+  --color-warning-hover: rgb(255, 241, 38);
+
+  --color-teal: #26acac;
+  --color-teal-hover: #067e7e;
+
+  --color-receipt: var(--color-white);
+  --color-receipt-front: var(--color-black-800);
+
+  --color-border-color: color-mix(
+    in oklab,
+    var(--color-base-front) 40%,
+    transparent
+  );
+
+  --background-mock123: 240 5% 96%; /* cool neutral: slate-100 */
+  --foreground-mock123: 240 6% 10%; /* cool neutral: slate-900 */
+  --card-mock123: 240 10% 100%; /* white */
+  --card-foreground-mock123: 240 6% 10%;
+  --popover-mock123: 240 10% 100%;
+  --popover-foreground-mock123: 240 6% 10%;
+  --primary-mock123: 240 5% 65%;
+  --primary-foreground-mock123: 240 5% 96%;
+  --secondary-mock123: 240 5% 93%;
+  --secondary-foreground-mock123: 240 6% 10%;
+  --muted-mock123: 240 5% 90%;
+  --muted-foreground-mock123: 240 4% 46%;
+  --border-mock123: 240 6% 89%;
+  --input-mock123: 240 6% 89%;
+  --ring-mock123: 240 6% 10%;
+
+  --color-base-barcode: #fafafa;
+  --color-text-barcode: #111827;
+  --color-batch-bg: #ffffff;
+
+  --color-background-user-profile: hsl(240, 10%, 99%); /* hsl(240, 10%, 99%) */
+  --color-foreground-user-profile: hsl(
+    240,
+    10%,
+    3.9%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-card-user-profile: hsl(0, 0%, 100%); /* hsl(0, 0%, 100%) */
+  --color-card-foreground-user-profile: hsl(
+    240,
+    10%,
+    3.9%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-popover-user-profile: hsl(0, 0%, 100%); /* hsl(0, 0%, 100%) */
+  --color-popover-foreground-user-profile: hsl(
+    240,
+    10%,
+    3.9%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-primary-user-profile: hsl(262, 84%, 58%); /* hsl(262, 84%, 58%) */
+  --color-primary-foreground-user-profile: hsl(
+    0,
+    0%,
+    100%
+  ); /* hsl(0, 0%, 100%) */
+  --color-secondary-user-profile: hsl(
+    240,
+    4.8%,
+    95.9%
+  ); /* hsl(240, 4.8%, 95.9%) */
+  --color-secondary-foreground-user-profile: hsl(
+    240,
+    5.9%,
+    10%
+  ); /* hsl(240, 5.9%, 10%) */
+  --color-muted-user-profile: hsl(240, 4.8%, 95.9%); /* hsl(240, 4.8%, 95.9%) */
+  --color-muted-foreground-user-profile: hsl(
+    240,
+    3.8%,
+    46.1%
+  ); /* hsl(240, 3.8%, 46.1%) */
+  --color-accent-user-profile: hsl(
+    240,
+    4.8%,
+    95.9%
+  ); /* hsl(240, 4.8%, 95.9%) */
+  --color-accent-foreground-user-profile: hsl(
+    240,
+    5.9%,
+    10%
+  ); /* hsl(240, 5.9%, 10%) */
+  --color-border-user-profile: hsl(240, 5.9%, 90%); /* hsl(240, 5.9%, 90%) */
+  --color-input-user-profile: hsl(240, 5.9%, 90%); /* hsl(240, 5.9%, 90%) */
+  --color-ring-user-profile: hsl(262, 84%, 58%); /* hsl(262, 84%, 58%) */
+}
+
+[data-theme="dark"] {
+  --color-userprofile:  #09242b;
+  --color-base: var(--color-gray-700);
+  --color-base-front: var(--color-gray-100);
+
+  --color-primary: var(--color-gray-800);
+  --color-primary-front: #f3f4f6;
+
+  --color-secondary: var(--color-gray-300);
+  --color-secondary-front: #e0e4e9;
+  --color-secondary-front: #e0e4e9;
+
+  --color-hover-effect: #0a0e14; /* Hover Effect */
+  --color-hover: #223145; /* Dark hover effect */
+
+  --color-mask: black;
+  --color-mask-front: white;
+
+  --color-indigo: var(--color-indigo-300);
+
+  --color-success: var(--color-green-600);
+  --color-success-hover: var(--color-green-700);
+
+  --color-error: #c43232;
+  --color-error-hover: #e74444;
+
+  --color-warning: #ffc14d;
+  --color-warning-hover: rgb(197, 159, 34);
+
+  --color-teal: #26acac;
+  --color-teal-hover: #067e7e;
+
+  --color-receipt: var(--color-gray-800);
+  --color-receipt-front: var(--color-white);
+
+  --color-add-purchase-bg: #0f172a;
+  --color-add-purchase-form: inherit;
+  --color-border-add-purchase: #334155;
+
+  /* Settings Colors */
+  --color-background-settings: var(--color-gray-950); /* gray-950 */
+  --color-foreground-settings: var(--color-late-50); /* slate-50 */
+  --color-card-settings: var(--color-slate-900); /* slate-900 */
+  --color-card-foreground-settings: var(--color-slate-200); /* slate-200 */
+  --color-border-settings: var(--color-slate-700); /* slate-700 */
+  --color-input-settings: var(--color-slate-800); /* slate-800 */
+  --color-primary-settings: var(--color-indigo-400); /* indigo-400 */
+  --color-primary-foreground-settings: var(--color-slate-900); /* slate-900 */
+  --color-muted-foreground-settings: var(--color-slate-400); /* slate-400 */
+
+  --color-background-user-profile: hsl(240 10% 3.9%); /* hsl(240, 10%, 99%) */
+  --color-foreground-user-profile: hsl(0 0% 98%); /* hsl(240, 10%, 3.9%) */
+  --color-card-user-profile: hsl(240 10% 10%); /* hsl(0, 0%, 100%) */
+  --color-card-foreground-user-profile: hsl(0 0% 98%); /* hsl(240, 10%, 3.9%) */
+  --color-popover-user-profile: hsl(240 10% 3.9%); /* hsl(0, 0%, 100%) */
+  --color-popover-foreground-user-profile: hsl(
+    0 0% 98%
+  ); /* hsl(240, 10%, 3.9%) */
+  --color-primary-user-profile: hsl(262 84% 58%); /* hsl(262, 84%, 58%) */
+  --color-primary-foreground-user-profile: hsl(
+    0 0% 100%
+  ); /* hsl(0, 0%, 100%) */
+  --color-secondary-user-profile: hsl(
+    240 3.7% 15.9%
+  ); /* hsl(240, 4.8%, 95.9%) */
+  --color-secondary-foreground-user-profile: hsl(
+    0 0% 98%
+  ); /* hsl(240, 5.9%, 10%) */
+  --color-muted-user-profile: hsl(240 3.7% 15.9%); /* hsl(240, 4.8%, 95.9%) */
+  --color-muted-foreground-user-profile: hsl(
+    240 5% 64.9%
+  ); /* hsl(240, 3.8%, 46.1%) */
+  --color-accent-user-profile: hsl(240 3.7% 15.9%); /* hsl(240, 4.8%, 95.9%) */
+  --color-accent-foreground-user-profile: hsl(
+    0 0% 98%
+  ); /* hsl(240, 5.9%, 10%) */
+  --color-border-user-profile: hsl(240, 4%, 26%); /* hsl(240, 5.9%, 90%) */
+  --color-input-user-profile: hsl(240 3.7% 15.9%); /* hsl(240, 5.9%, 90%) */
+  --color-ring-user-profile: hsl(262 84% 58%); /* hsl(262, 84%, 58%) */
+
+  --color-background-primary-users: #0f172a;
+  --color-background-secondary-users: #1e293b;
+  --color-background-tertiary-users: #334155;
+  --color-text-primary-users: #f8fafc;
+  --color-text-secondary-users: #94a3b8;
+  --color-border-primary-users: #334155;
+  --color-accent-primary-users: #6366f1;
+  --color-accent-hover-users: #4f46e5;
+  --color-destructive-users: #f87171;
+  --color-destructive-hover-users: #ef4444;
+
+  --color-surface: #1f2937; /* Cards, panels */
+  --color-muted: #111827; /* Muted or masked areas */
+  --color-elevated: #374151; /* Tooltips, dropdowns */
+  --color-sidebar: #1e293b; /* Left/right panels */
+  --color-header: #1f2937;
+  --color-footer: #111827;
+
+  --color-pressed: #4b5563; /* Pressed state */
+  --color-active: #2563eb33; /* Blue highlight with opacity */
+
+  --color-muted-front: #9ca3af;
+  --color-inverted-front: #000000;
+  --color-accent-front: #60a5fa;
+  --color-error-front: #f87171;
+  --color-success-front: #4ade80;
+  --color-warning-front: #fbbf24;
+  --color-disabled-front: #6b7280;
+
+  --color-primary-mock: #3b82f6;
+  --color-primary-hover-mock: #60a5fa;
+  --color-secondary-mock: #64748b;
+  --color-background-mock: #0f172a;
+  --color-surface-mock: #1e293b;
+  --color-surface-hover-mock: #334155;
+  --color-text-primary-mock: #f8fafc;
+  --color-text-secondary-mock: #cbd5e1;
+  --color-text-muted-mock: #64748b;
+  --color-success-mock: #10b981;
+  --color-warning-mock: #f59e0b;
+  --color-error-mock: #ef4444;
+  --color-shadow-mock: rgba(0, 0, 0, 0.3);
+
+  --background-mock123: 240 6% 10%; /* shades of gray: slate-900 */
+  --foreground-mock123: 240 5% 96%; /* shades of gray: slate-100 */
+  --card-mock123: 240 6% 10%;
+  --card-foreground-mock123: 240 5% 96%;
+  --popover-mock123: 240 6% 10%;
+  --popover-foreground-mock123: 240 5% 96%;
+  --primary-mock123: 240 5% 96%;
+  --primary-foreground-mock123: 240 6% 10%;
+  --secondary-mock123: 240 4% 16%;
+  --secondary-foreground-mock123: 240 5% 96%;
+  --muted-mock123: 240 4% 16%;
+  --muted-foreground-mock123: 240 4% 56%;
+  --border-mock123: 240 4% 16%;
+  --input-mock123: 240 4% 16%;
+  --ring-mock123: 240 5% 96%;
+
+  --color-base-barcode: #1f2937;
+  --color-text-barcode: #f9fafb;
+  --color-batch-bg: #2d3748;
+}
+
+/* * HELPER CLASSES
+  * In a real Tailwind setup, you would extend your theme in tailwind.config.js
+  * to generate these classes automatically. This is the manual way for portability.
+ */
+/* .bg-background-mock123 { background-color: hsl(var(--background-mock123)); }
+ .text-foreground-mock123 { color: hsl(var(--foreground-mock123)); }
+ .bg-card-mock123 { background-color: hsl(var(--card-mock123)); }
+ .text-card-foreground-mock123 { color: hsl(var(--card-foreground-mock123)); }
+ .bg-popover-mock123 { background-color: hsl(var(--popover-mock123)); }
+ .text-popover-foreground-mock123 { color: hsl(var(--popover-foreground-mock123)); }
+ .bg-primary-mock123 { background-color: hsl(var(--primary-mock123)); }
+ .text-primary-foreground-mock123 { color: hsl(var(--primary-foreground-mock123)); }
+ .bg-secondary-mock123 { background-color: hsl(var(--secondary-mock123)); }
+ .text-secondary-foreground-mock123 { color: hsl(var(--secondary-foreground-mock123)); }
+ .bg-muted-mock123 { background-color: hsl(var(--muted-mock123)); }
+ .text-muted-foreground-mock123 { color: hsl(var(--muted-foreground-mock123)); }
+ .border-border-mock123 { border-color: hsl(var(--border-mock123)); }
+ .ring-ring-mock123 { --tw-ring-color: hsl(var(--ring-mock123)); } */
