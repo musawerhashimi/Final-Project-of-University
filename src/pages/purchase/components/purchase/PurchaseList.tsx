@@ -315,7 +315,6 @@ export default function PurchaseList() {
                           >
                             <button
                               title="Mark as Received"
-                              onClick={() => handleReceive(purchase)}
                               className="w-full  text-center py-1 px-2 border border-transparent text-xs font-medium rounded-lg shadow-sm text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200"
                             >
                               <Eye className="w-4 h-4 inline" />

@@ -41,12 +41,12 @@ export default function ReceiptDialog({
         />
       </div>
       <div className="m-2 inline-block">
-        <Button
+        {/* <Button
           className="bg-green-500 px-2 py-1 rounded-md"
           icon={<FaEdit className="text-white" />}
           onClick={onHide}
           autoFocus
-        />
+        /> */}
       </div>
     </>
   );

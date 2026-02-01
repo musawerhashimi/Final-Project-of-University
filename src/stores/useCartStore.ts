@@ -228,16 +228,14 @@ export const useCartStore = create<CartStore>()(
         if (finalAmount <= 0) {
           return;
         }
-        const pay = convertCurrency(
-          payment.amount,
-          payment.currency,
-          subtotalCurrencyId
+        const pay = roundWithPrecision(
+          convertCurrency(payment.amount, payment.currency, subtotalCurrencyId),
+          3
         );
         if (pay > finalAmount) {
-          payment.amount = convertCurrency(
-            finalAmount,
-            subtotalCurrencyId,
-            payment.currency
+          payment.amount = roundWithPrecision(
+            convertCurrency(finalAmount, subtotalCurrencyId, payment.currency),
+            3
           );
         }
         const id = payments.length;
@@ -359,26 +357,30 @@ export const useCartStore = create<CartStore>()(
         // Build payload to match DRF serializer
         const payload = {
           receipt_id: receipt_id.toString(),
-          sale_date: sale_date
-            ? sale_date.toISOString()
-            : new Date().toISOString(),
+          sale_date: sale_date?.toISOString(),
           customer: customer?.id ?? null,
-          discount_amount,
+          discount_amount: roundWithPrecision(discount_amount, 3),
           tax_amount: 0, // adjust if you add tax logic later
           currency: subtotalCurrencyId,
           notes,
           items: items.map((it) => ({
             inventory: it.inventory,
             quantity: it.quantity,
-            unit_price: convertCurrency(
-              it.selling_price,
-              it.selling_currency,
-              subtotalCurrencyId
+            unit_price: roundWithPrecision(
+              convertCurrency(
+                it.selling_price,
+                it.selling_currency,
+                subtotalCurrencyId
+              ),
+              3
             ),
-            discount_amount: convertCurrency(
-              it.discountPrice,
-              it.discountCurrency,
-              subtotalCurrencyId
+            discount_amount: roundWithPrecision(
+              convertCurrency(
+                it.discountPrice,
+                it.discountCurrency,
+                subtotalCurrencyId
+              ),
+              3
             ),
           })),
           payments: payments,

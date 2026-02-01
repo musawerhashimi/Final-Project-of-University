@@ -22,6 +22,7 @@ const CustomerFilterInput = ({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
+
         componentRef.current &&
         !componentRef.current.contains(event.target as Node)
       ) {
@@ -33,7 +34,7 @@ const CustomerFilterInput = ({
   }, []);
 
   const handleItemClick = (item: SaleCustomer) => {
-    // onChangeInput(item.name)
+    // onChangeInputbbdcjdcchhdldvdcguddhbdjjdchickxhcc(item.name)
     onSelectItem(item);
     setIsListOpen(false);
   };

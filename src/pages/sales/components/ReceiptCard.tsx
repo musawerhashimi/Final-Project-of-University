@@ -67,10 +67,10 @@ function ReceiptCard(props: Receipt) {
 
       <div className="relative mt-10 text-sm font-semibold">
         <div className="absolute  bottom-0">
-          <button className=" bg-error hover:bg-red-700 text-white  p-1 rounded-sm transition-colors duration-300">
+          {/* <button className=" bg-error hover:bg-red-700 text-white  p-1 rounded-sm transition-colors duration-300">
             {t("Delete")}
-          </button>
-          <div className="ms-1 inline-block"></div>
+          </button> */}
+          {/* <div className="ms-1 inline-block"></div> */}
           <Button
             className=" bg-success hover:bg-green-600 text-white  p-1 rounded-sm transition-colors duration-300"
             label={t("Read more")}

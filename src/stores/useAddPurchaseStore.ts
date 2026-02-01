@@ -278,6 +278,7 @@ export const useAddPurchaseStore = create<AddPurchaseStore>()(
             };
           }
           formData.append("payment", JSON.stringify(payment));
+
           const response = await apiClient.post(
             "/vendors/purchases/",
             formData,

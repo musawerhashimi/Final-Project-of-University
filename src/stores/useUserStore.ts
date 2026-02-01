@@ -264,7 +264,7 @@ export const useUserProfileStore = create<UserState>()(
       hasPermission(permission, all: boolean = false) {
         const { userProfile } = get();
         if (!userProfile) return false;
-        if (userProfile.role === "admin") return true;
+        // if (userProfile.role === "admin") return true;
 
         // Normalize permission to array if it's a single permission
         const permissionsArray = Array.isArray(permission)

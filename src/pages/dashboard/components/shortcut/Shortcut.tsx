@@ -47,8 +47,8 @@ const shortcuts: ShortcutItem[] = [
     permission: "customers",
     path: "/dashboard/customer",
   },
-  { icon: ArrowDownUp, label: "Resource Transfer", path: "" },
-  { icon: Repeat2, label: "Warehouse Transfer", path: "" },
+  // { icon: ArrowDownUp, label: "Resource Transfer", path: "" },
+  // { icon: Repeat2, label: "Warehouse Transfer", path: "" },
 ];
 
 // Helper function to get dynamic background colors for shortcut icons

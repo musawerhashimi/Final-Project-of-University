@@ -16,6 +16,8 @@ import { useTranslation } from "react-i18next";
 import { useUserProfileStore } from "../../stores/useUserStore";
 import { extractAxiosError } from "../../utils/extractError";
 import { roundWithPrecision } from "../../utils/roundWithPrecision";
+import { updateInventoryItemFieldEverywhere } from "../../queries/inventoryUpdater";
+import { useInventory } from "../../hooks/inventory/useInventory";
 
 function SalePayment() {
   const { t } = useTranslation();
@@ -63,7 +65,7 @@ function SalePayment() {
   const subtotal = getSubtotal();
   const totalAmount = getTotalAmount();
   const contentRef = useRef<HTMLDivElement>(null);
-
+  const { items: inventory_items } = useInventory();
   const navigate = useNavigate();
 
   const handleComplete = async () => {
@@ -73,7 +75,19 @@ function SalePayment() {
       const sale = await submitSale();
       toast.success(`Sale Successfully Created: ${sale.receipt_id}`);
       // toast.success(`${t("✅ Sale Successfully Created:")} ${sale.receipt_id}`);
-
+      items.map((item) => {
+        const inventory_item = inventory_items.find(
+          (i) => i.id === item.inventory
+        );
+        if (!inventory_item) return;
+        updateInventoryItemFieldEverywhere(
+          item.inventory,
+          "quantity_on_hand",
+          (
+            parseFloat(inventory_item.quantity_on_hand) - item.quantity
+          ).toString()
+        );
+      });
       setTimeout(() => navigate("/"), 3000);
     } catch (err) {
       extractAxiosError(err, "Failed to submit sale");

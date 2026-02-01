@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -24,9 +24,12 @@ function LoginPage() {
     logo: "/images/loddingImage.jpg",
     shop_name: "EasyShop",
   });
-  apiClient.get<Shop>("/core/settings/logo").then((res) => {
-    setShop(res.data);
-  });
+  useEffect(() => {
+    apiClient.get<Shop>("/core/settings/logo").then((res) => {
+      setShop(res.data);
+    });
+  }, []);
+
   const {
     register,
     handleSubmit,
